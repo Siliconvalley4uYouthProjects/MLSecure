@@ -9,6 +9,7 @@ app = firebase_admin.initialize_app(cred)
 
 store = firestore.client()
 
+# Import top1websitesalexa.csv to Firebase
 file_path = "./top-1m.csv"
 collection_name = "top1websitesalexa"
 
@@ -44,16 +45,4 @@ for batched_data in batch_data(data, 499):
         batch.set(doc_ref, data_item)
     batch.commit()
 
-# doc_ref = store.collection(u'test')
-# doc_ref.add({u'name': u'test', u'added': u'just now'})
-
-# try: 
-#     docs = doc_ref.get()
-#     for doc in docs:
-#         print(u'Doc Data:{}'.format(doc.to_dict()))
-
-# except google.cloud.exceptions.NotFound:
-#     print(u'Missing data')
-
-# df = pd.read_csv('top-1m.csv')
-# print(df.head())
+# Import other datasets

@@ -15,14 +15,6 @@ firebase = pyrebase.initialize_app(config)
 
 db = firebase.database()
 
-# db.child("names").push({"name":"son"})
-# db.child("names").child("name").update({"name":"nguyen"})
-# users = db.child("names").child("name").get()
-# print(users.val())
-# print(users.key())
-
-# db.child("names").remove()
-
 from flask import *
 
 app = Flask(__name__)
