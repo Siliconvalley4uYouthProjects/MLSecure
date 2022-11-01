@@ -10,8 +10,8 @@ app = firebase_admin.initialize_app(cred)
 store = firestore.client()
 
 # Import urlhaus.txt to Firebase
-file_path = "./urlhaus"
-collection_name = "top1websitesalexa"
+file_path = "./dataset/urlhaus_v2.txt"
+collection_name = "urlhaus"
 
 def batch_data(iterable, n=1):
     l = len(iterable)
@@ -44,5 +44,6 @@ for batched_data in batch_data(data, 499):
         doc_ref = store.collection(collection_name).document()
         batch.set(doc_ref, data_item)
     batch.commit()
+    print("Committed")
 
 # Import other datasets
