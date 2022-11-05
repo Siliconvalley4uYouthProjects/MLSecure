@@ -4,7 +4,7 @@ from firebase_admin import credentials, firestore
 import pandas as pd
 import csv 
 
-cred = credentials.Certificate('./ServiceAccountKey_v2.json')
+cred = credentials.Certificate('./firebase_v2/ServiceAccountKey_v2.json')
 app = firebase_admin.initialize_app(cred)
 
 store = firestore.client()
@@ -45,5 +45,3 @@ for batched_data in batch_data(data, 499):
         batch.set(doc_ref, data_item)
     batch.commit()
     print("Committed")
-
-# Import other datasets

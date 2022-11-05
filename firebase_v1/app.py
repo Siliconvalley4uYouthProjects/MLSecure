@@ -1,21 +1,21 @@
 import pyrebase
 # from collections.abc import MutableMapping
+from flask import *
+from firebase_admin import credentials, initialize_app
 
 config = {
-    "apiKey": "AIzaSyBpPT7IQZxyOMhxoiQpLI4Ho4Opr9Z0MPk",
-    "authDomain": "test-e8881.firebaseapp.com",
-    "databaseURL": "https://test-e8881-default-rtdb.firebaseio.com",
-    "projectId": "test-e8881",
-    "storageBucket": "test-e8881.appspot.com",
-    "messagingSenderId": "796926947188",
-    "appId": "1:796926947188:web:7b04439a740a44ef910621"
+    "apiKey": "AIzaSyAKa4D-Wf2lT9C8KHq03UJNDw3fkJ3kuL0",
+    "authDomain": "mlv2-5433c.firebaseapp.com",
+    "projectId": "mlv2-5433c",
+    "storageBucket": "mlv2-5433c.appspot.com",
+    "messagingSenderId": "102375590557",
+    "appId": "1:102375590557:web:ecfdc34f084f8e5d1f6274"
 }
 
 firebase = pyrebase.initialize_app(config)
 
 db = firebase.database()
 
-from flask import *
 
 app = Flask(__name__)
 
@@ -33,4 +33,4 @@ def basic():
     return render_template('index.html')
 
 if __name__ == 'main':
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=5000)  
